@@ -8,3 +8,15 @@
 4. Projektsetup (in diesem Ordner ausführen)
     1. Node.js-Dependencies installieren: `$ npm install`
     2. Bower-Dependencies installieren: `$ bower install`
+
+### CORS
+
+* http://pouchdb.com/errors.html
+* https://github.com/pouchdb/add-cors-to-couchdb
+
+* CORS aktivieren
+    * `/_config/httpd/enable_cors`: `true`
+* Cookies dürfen an die Couch übertragen werden
+    * `/_config/cors/credentials`: `true`
+* erlaubte Request-Quellen
+    * `/_config/cors/origins`: `http://localhost:63342`

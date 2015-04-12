@@ -3,7 +3,7 @@
 
     angular.module('demo').controller('demoNoteController', ['$scope', 'pouchEvent', 'demoNoteRepository', 'demoType', function ($scope, pouchEvent, demoNoteRepository, demoType) {
 
-        var $modal = $('#myModal').modal({
+        var $modal = jQuery('#myModal').modal({
             show: false
         });
 
