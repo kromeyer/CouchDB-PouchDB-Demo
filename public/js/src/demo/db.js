@@ -9,7 +9,10 @@
             since: 'now',
             live: true
         }).on('change', function (event) {
+            console.log(pouchEvent.CHANGE, event);
             $rootScope.$broadcast(pouchEvent.CHANGE, event);
+        }).on('complete', function (event) {
+            console.log(pouchEvent.COMPLETE, event);
         }).on('error', function (error) {
             console.error(pouchEvent.ERROR, error);
         });

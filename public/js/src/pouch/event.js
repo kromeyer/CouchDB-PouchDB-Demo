@@ -3,6 +3,7 @@
 
     angular.module('pouch').constant('pouchEvent', {
         CHANGE: 'pouch.event.change',
+        COMPLETE: 'pouch.event.complete',
         ERROR: 'pouch.event.error',
 
         SYNC_CHANGE: 'pouch.event.sync.change',
