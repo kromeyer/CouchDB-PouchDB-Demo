@@ -36,10 +36,10 @@
                 </p>
             </div>
             <ul class="list-unstyled">
-                <li ng-repeat="note in notes | orderBy:'-_id'">
+                <li ng-repeat="note in notes | orderBy:'-timestamp'">
                     <h2>{{note.title}}</h2>
 
-                    <p class="lead">{{note.date.toLocaleDateString()}}</p>
+                    <p class="lead">{{note.timestamp.toLocaleDateString()}}</p>
 
                     <p>{{note.content}}</p>
 

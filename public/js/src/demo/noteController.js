@@ -19,7 +19,7 @@
             return {
                 _id: uuid.v1(),
                 type: demoType.NOTE,
-                date: new Date(),
+                timestamp: new Date(),
                 title: '',
                 content: ''
             };
