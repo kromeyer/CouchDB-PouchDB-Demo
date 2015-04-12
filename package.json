@@ -1,0 +1,34 @@
+{
+  "name": "CouchDB_PouchDB_Demo",
+  "version": "0.0.0",
+  "private": true,
+  "contributors": [
+    "Patrick Kromeyer <patrick.kromeyer@gmail.com>"
+  ],
+  "jshintConfig": {
+    "nonew": true,
+    "curly": true,
+    "noarg": true,
+    "forin": true,
+    "noempty": true,
+    "node": true,
+    "eqeqeq": true,
+    "strict": true,
+    "undef": true,
+    "bitwise": true,
+    "immed": true,
+    "browser": true,
+    "freeze": true,
+    "predef": [
+      "module",
+      "angular",
+      "inject",
+      "describe",
+      "beforeEach",
+      "it",
+      "expect",
+      "uuid",
+      "emit"
+    ]
+  }
+}
