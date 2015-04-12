@@ -3,18 +3,6 @@
 
     angular.module('demo').controller('demoNoteController', ['$scope', 'pouchEvent', 'demoNoteRepository', 'demoType', function ($scope, pouchEvent, demoNoteRepository, demoType) {
 
-        var $modal = jQuery('#myModal').modal({
-            show: false
-        });
-
-        var showModal = function () {
-            $modal.modal('show');
-        };
-
-        var hideModal = function () {
-            $modal.modal('hide');
-        };
-
         var createNote = function () {
             return {
                 _id: uuid.v1(),
@@ -25,28 +13,29 @@
             };
         };
 
+        $scope.formModal = null; // will be set by directive
         $scope.formData = null;
         $scope.notes = [];
 
         $scope.add = function () {
             $scope.formData = createNote();
-            showModal();
+            $scope.formModal.show();
         };
 
         $scope.edit = function (note) {
             $scope.formData = angular.copy(note);
-            showModal();
+            $scope.formModal.show();
         };
 
         $scope.cancel = function () {
-            hideModal();
+            $scope.formModal.hide();
             $scope.formData = null;
         };
 
         $scope.submit = function () {
             demoNoteRepository.save($scope.formData)
                 .then(function () {
-                    hideModal();
+                    $scope.formModal.hide();
                     $scope.formData = null;
                 }).catch(function (error) {
                     console.error('error in submit', error);
