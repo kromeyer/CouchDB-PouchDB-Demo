@@ -39,7 +39,7 @@
                 <li ng-repeat="note in notes | orderBy:'-timestamp'">
                     <h2>{{note.title}}</h2>
 
-                    <p class="lead">{{note.timestamp.toLocaleDateString()}}</p>
+                    <p class="lead">{{note.timestamp}}</p>
 
                     <p>{{note.content}}</p>
 
