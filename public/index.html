@@ -10,6 +10,7 @@
     <title>meine Notizen</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body ng-app="app"
@@ -21,11 +22,15 @@
             <div class="page-header">
                 <h1>meine Notizen</h1>
             </div>
-            <div class="alert alert-warning" role="alert">
-                <p>Sie arbeiten offline.</p>
-            </div>
-            <div class="alert alert-success" role="alert">
-                <p>Sie arbeiten online.</p>
+            <div ng-controller="demoNetworkController">
+                <div ng-show="showOfflineMessage"
+                     class="alert-page-header alert alert-warning" role="alert">
+                    <p>Sie arbeiten offline.</p>
+                </div>
+                <div ng-show="showOnlineMessage"
+                     class="alert-page-header alert alert-success" role="alert">
+                    <p>Sie arbeiten online.</p>
+                </div>
             </div>
             <div class="clearfix">
                 <p class="pull-right">
@@ -104,15 +109,19 @@
 <script src="../bower_components/pouchdb/dist/pouchdb.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
 <script src="../bower_components/node-uuid/uuid.js"></script>
+<script src="js/src/network/module.js"></script>
+<script src="js/src/network/detector.js"></script>
 <script src="js/src/pouch/module.js"></script>
 <script src="js/src/pouch/deferredConverter.js"></script>
 <script src="js/src/pouch/event.js"></script>
 <script src="js/src/demo/module.js"></script>
+<script src="js/src/demo/event.js"></script>
 <script src="js/src/demo/db.js"></script>
 <script src="js/src/demo/type.js"></script>
 <script src="js/src/demo/noteRepository.js"></script>
 <script src="js/src/demo/noteController.js"></script>
 <script src="js/src/demo/noteModal.js"></script>
+<script src="js/src/demo/networkController.js"></script>
 <script src="js/src/app.js"></script>
 </body>
 

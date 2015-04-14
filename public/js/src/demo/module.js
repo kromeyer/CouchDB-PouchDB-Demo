@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('demo', ['pouch']);
+    angular.module('demo', ['network', 'pouch']);
 
 })();
