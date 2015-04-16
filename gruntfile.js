@@ -2,6 +2,14 @@ module.exports = function (grunt) {
     'use strict';
 
     var paths = {
+        'css': {
+            'srcDependencies': [
+                'bower_components/bootstrap/dist/css/bootstrap.css'
+            ],
+            'src': [
+                'public/css/src/styles.css'
+            ]
+        },
         'js': {
             'srcDependencies': [
                 'bower_components/jquery/dist/jquery.js',
@@ -35,6 +43,7 @@ module.exports = function (grunt) {
         }
     };
 
+    grunt.loadNpmTasks('grunt-concat-css');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-karma');
@@ -42,6 +51,12 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        concat_css: {
+            prod: {
+                src: paths.css.srcDependencies.concat(paths.css.src),
+                dest: 'public/css/build/styles.min.css'
+            }
+        },
         jshint: {
             files: ['package.json', 'bower.json', 'gruntfile.js', 'js/src/**/*.js', 'js/test/**/*.js'],
             options: {
@@ -86,5 +101,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('js:dev', ['jshint', 'karma', 'uglify:dev']);
     grunt.registerTask('js:prod', ['jshint', 'karma', 'uglify:prod']);
-    grunt.registerTask('default', ['js:prod']);
+    grunt.registerTask('default', ['concat_css:prod', 'js:prod']);
 };
