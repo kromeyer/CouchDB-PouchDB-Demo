@@ -8,6 +8,7 @@
 4. Projektsetup (in diesem Ordner ausführen)
     1. Node.js-Dependencies installieren: `$ npm install`
     2. Bower-Dependencies installieren: `$ bower install`
+    3. Grunt ausführen: `$ nde_modules/grunt-cli/bin/grunt`
 
 ### CORS
 
