@@ -70,23 +70,30 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title">Notiz anlegen</h2>
+                    <h2 class="modal-title">Notiz</h2>
                 </div>
-                <form ng-submit="submit()">
+                <form ng-submit="submit()"
+                      name="form" novalidate>
                     <div class="modal-body">
-                        <div class="form-group">
+                        <div ng-class="{'has-error': (form.$submitted || form.title.$touched) && form.title.$error.required}"
+                             class="form-group">
                             <label for="title">Titel</label>
                             <input ng-model="formData.title"
-                                   type="text" class="form-control" id="title" placeholder="Titel ...">
+                                   name="title" id="title" type="text" class="form-control" placeholder="Titel ..."
+                                   required>
 
-                            <p class="help-block">Example block-level help text here.</p>
+                            <p ng-show="(form.$submitted || form.title.$touched) && form.title.$error.required"
+                               class="help-block">Bitte geben Sie einen gültigen Titel ein.</p>
                         </div>
-                        <div class="form-group">
+                        <div ng-class="{'has-error': (form.$submitted || form.content.$touched) && form.content.$error.required}"
+                             class="form-group">
                             <label for="content">Inhalt</label>
                             <textarea ng-model="formData.content"
-                                      class="form-control" id="content" rows="5" placeholder="Inhalt ..."></textarea>
+                                      name="content" id="content" class="form-control" rows="5" placeholder="Inhalt ..."
+                                      required></textarea>
 
-                            <p class="help-block">Example block-level help text here.</p>
+                            <p ng-show="(form.$submitted || form.content.$touched) && form.content.$error.required"
+                               class="help-block">Bitte geben Sie einen gültigen Inhalt ein.</p>
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -13,7 +13,15 @@
             };
         };
 
+        var resetForm = function () {
+            $scope.formModal.hide();
+            $scope.formData = null;
+            $scope.form.$setPristine();
+            $scope.form.$setUntouched();
+        };
+
         $scope.formModal = null; // will be set by directive
+        $scope.form = null; // will be set by angular
         $scope.formData = null;
         $scope.notes = [];
 
@@ -28,18 +36,18 @@
         };
 
         $scope.cancel = function () {
-            $scope.formModal.hide();
-            $scope.formData = null;
+            resetForm();
         };
 
         $scope.submit = function () {
-            demoNoteRepository.save($scope.formData)
-                .then(function () {
-                    $scope.formModal.hide();
-                    $scope.formData = null;
-                }).catch(function (error) {
-                    console.error('error in submit', error);
-                });
+            if ($scope.form.$valid) {
+                demoNoteRepository.save($scope.formData)
+                    .then(function () {
+                        resetForm();
+                    }).catch(function (error) {
+                        console.error('error in submit', error);
+                    });
+            }
         };
 
         $scope.delete = function (entry) {
