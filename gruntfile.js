@@ -16,7 +16,9 @@ module.exports = function (grunt) {
                 'bower_components/bootstrap/dist/js/bootstrap.js',
                 'bower_components/pouchdb/dist/pouchdb.js',
                 'bower_components/angular/angular.js',
-                'bower_components/node-uuid/uuid.js'
+                'bower_components/node-uuid/uuid.js',
+                'bower_components/moment/moment.js',
+                'bower_components/moment/locale/de.js'
             ],
             'src': [
                 'public/js/src/network/module.js',
@@ -32,6 +34,8 @@ module.exports = function (grunt) {
                 'public/js/src/demo/noteController.js',
                 'public/js/src/demo/noteModal.js',
                 'public/js/src/demo/networkController.js',
+                'public/js/src/common/module.js',
+                'public/js/src/common/formatDateFilter.js',
                 'public/js/src/app.js'
             ],
             'testDependencies': [
