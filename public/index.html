@@ -44,7 +44,7 @@
                 <li ng-repeat="note in notes | orderBy:'-timestamp'">
                     <h2>{{note.title}}</h2>
 
-                    <p class="lead">{{note.timestamp | commonFormatDateFilter:'dddd, DD.MM.YYYY hh:mm'}} Uhr</p>
+                    <p class="lead">{{note.timestamp | commonFormatDateFilter:'dddd, DD.MM.YYYY HH:mm'}} Uhr</p>
 
                     <p>{{note.content}}</p>
 
