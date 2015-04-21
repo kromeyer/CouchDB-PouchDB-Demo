@@ -8,16 +8,11 @@
 4. Projektsetup (in diesem Ordner ausführen)
     1. Node.js-Dependencies installieren: `$ npm install`
     2. Bower-Dependencies installieren: `$ bower install`
-    3. Grunt ausführen: `$ nde_modules/grunt-cli/bin/grunt`
+    3. Grunt ausführen: `$ node_modules/grunt-cli/bin/grunt`
 
-### CORS
+### Demo
 
-* http://pouchdb.com/errors.html
-* https://github.com/pouchdb/add-cors-to-couchdb
-
-* CORS aktivieren
-    * `/_config/httpd/enable_cors`: `true`
-* Cookies dürfen an die Couch übertragen werden
-    * `/_config/cors/credentials`: `true`
-* erlaubte Request-Quellen
-    * `/_config/cors/origins`: `http://localhost:63342`
+* CouchDB starten: `$ sudo port load couchdb`
+* Setup-Script ausführen: `$ bin/setup.sh`
+* Webserver installieren: `npm install node-static`
+* Webserver starten: `$ node_modules/node-static/bin/cli.js public/`
