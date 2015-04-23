@@ -62,7 +62,7 @@ module.exports = function (grunt) {
             }
         },
         jshint: {
-            files: ['package.json', 'bower.json', 'gruntfile.js', 'js/src/**/*.js', 'js/test/**/*.js'],
+            files: ['package.json', 'bower.json', 'gruntfile.js', 'public/js/src/**/*.js', 'public/js/test/**/*.js'],
             options: {
                 strict: true
             }
